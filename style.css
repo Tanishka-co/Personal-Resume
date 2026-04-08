@@ -218,3 +218,15 @@ li {
         --secondary-color: #333;
     }
 }
+/* --- Project GitHub Link --- */
+.item a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.item a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
