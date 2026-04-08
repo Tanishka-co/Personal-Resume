@@ -1,0 +1,220 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* --- CSS Variables for Easy Theme Customization --- */
+:root {
+    --primary-color: #0056b3; /* A professional dark blue */
+    --secondary-color: #007bff; /* A slightly lighter blue for accents */
+    --text-color: #333333;
+    --light-gray-color: #f8f9fa;
+    --border-color: #e9ecef;
+    --container-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* --- General & Body Styles --- */
+body {
+    font-family: var(--font-family);
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--light-gray-color);
+    margin: 0;
+    padding: 20px;
+}
+
+/* --- Main Resume Container --- */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: var(--container-shadow);
+    border-top: 5px solid var(--primary-color);
+}
+
+/* --- Header & Contact Info --- */
+.header {
+    text-align: center;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 3em; /* 48px */
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.header .contact-info {
+    margin-top: 15px;
+    font-size: 0.95em; /* 15px */
+    color: #555;
+}
+
+.header .contact-info a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin: 0 12px;
+    transition: color 0.3s ease;
+}
+
+.header .contact-info a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* --- General Section Styles --- */
+.section {
+    margin-bottom: 35px;
+}
+
+.section h2 {
+    font-size: 1.6em; /* 26px */
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+/* --- Item Styles (for Education, Projects, etc.) --- */
+/* .item {
+    margin-bottom: 25px;
+    /* Using Flexbox for modern alignment of title and date 
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+} */
+
+/* --- Item Styles (for Education, Projects, etc.) --- */
+.item {
+    margin-bottom: 25px;
+}
+
+/* This is a clearfix, a standard method to contain floated elements */
+.item::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.item-description,
+.item ul {
+    margin-top: 10px;
+}
+.item-main {
+    flex-grow: 1;
+}
+
+.item-title {
+    font-size: 1.25em; /* 20px */
+    font-weight: 600;
+    color: var(--text-color);
+    display: block;
+}
+
+.item-subtitle {
+    font-size: 1.1em; /* 17.6px */
+    color: #555;
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* .date {
+    font-weight: 600;
+    color: var(--secondary-color);
+    white-space: nowrap; /* Prevents the date from wrapping 
+    padding-left: 20px;
+} */
+ .date {
+    float: right; /* This places the date on the far right */
+    font-weight: 600;
+    color: var(--secondary-color);
+    padding-left: 20px; /* Adds space so text doesn't touch it */
+}
+
+.item-description,
+.item ul {
+    margin-top: 10px;
+    /* Ensures the description/list spans the full width under the flex container */
+    width: 100%;
+}
+
+ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* --- Technical Skills Section --- */
+.skills-list h4 {
+    font-weight: 700;
+    color: #444;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.skills-list ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills-list li {
+    background-color: #e9ecef;
+    color: #343a40;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.9em; /* 14.4px */
+    font-weight: 400;
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.skills-list li:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* --- Print-Friendly Styles --- */
+@media print {
+    body {
+        background-color: #fff;
+        padding: 0;
+        font-size: 10pt;
+    }
+    .container {
+        box-shadow: none;
+        border-top: none;
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        border-radius: 0;
+    }
+    .header .contact-info a {
+        text-decoration: none;
+        color: #333;
+    }
+    .skills-list li {
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+    }
+    :root {
+        --primary-color: #000;
+        --secondary-color: #333;
+    }
+}
